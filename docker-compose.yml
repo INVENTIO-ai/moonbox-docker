@@ -1,0 +1,21 @@
+version: '3.7'
+
+services:
+  baslermoon:
+    image: baslermoon
+    container_name: baslermoon
+    #network_mode: host
+    networks:
+     - camera_vlan
+    volumes:
+     - ./working:/working
+
+networks:
+  camera_vlan:
+    driver: macvlan
+    driver_opts:
+      parent: eth0 #eth0.10 # your adapter name goes here
+    ipam:
+      driver: default
+      config:
+        - subnet: "192.168.0.8/24"

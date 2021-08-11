@@ -17,3 +17,5 @@ COPY . /bd_build
 
 ARG DEBIAN_FRONTEND='noninteractive'
 RUN with_genicam=$with_genicam with_pylon=$with_pylon with_cuda=$with_cuda bash /bd_build/install_deps.sh
+
+WORKDIR /working

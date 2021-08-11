@@ -6,4 +6,4 @@ set -euo pipefail
 
 echo Install GeniCam
 
-pip install harvesters==0.2.10
+pip install genicam harvesters==1.3.1
